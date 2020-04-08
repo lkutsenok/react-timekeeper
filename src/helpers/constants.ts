@@ -49,7 +49,7 @@ export const CLOCK_VALUES: ClockValues = {
 export const VISIBLE_NUMBERS_PER_CIRCLE = 12
 
 // radius of clock, in px
-export const CLOCK_RADIUS = 110
+export const CLOCK_RADIUS = 466
 export const CLOCK_SIZE = CLOCK_RADIUS * 2
 
 /*
@@ -57,22 +57,22 @@ export const CLOCK_SIZE = CLOCK_RADIUS * 2
 	- controls how far out the inner circle comes and
 	how far in numbers come as well
  */
-export const INNER_NUMBER_RADIUS = 77
+export const INNER_NUMBER_RADIUS = 300
 
 // font sizes
-export const NUMBER_REGULAR_FONT_SIZE = 16
-export const HOUR_24_INNER_FONT_SIZE = 15
-export const HOUR_24_OUTER_FONT_SIZE = 13
+export const NUMBER_REGULAR_FONT_SIZE = 58
+export const HOUR_24_INNER_FONT_SIZE = 40
+export const HOUR_24_OUTER_FONT_SIZE = 58
 
 // size of circle surrounding individual numbers
 // loosely based on font sizes above
-export const NUMBER_RADIUS_REGULAR = 34
-const NUMBER_RADIUS_HOUR_24_OUTER = 32
-const NUMBER_RADIUS_HOUR_24_INNER = 28
+export const NUMBER_RADIUS_REGULAR = 100
+const NUMBER_RADIUS_HOUR_24_OUTER = 100
+const NUMBER_RADIUS_HOUR_24_INNER = 100
 
 // positioning of numbers
-export const NUMBER_OUTER_POSITION = 22
-const NUMBER_OUTER_POSITION_24_HOUR = 18 // controls how far out to move numbers during 24h mode
+export const NUMBER_OUTER_POSITION = 50
+const NUMBER_OUTER_POSITION_24_HOUR = 55 // controls how far out to move numbers during 24h mode
 const NUMBER_INNER_POSITION_24_HOUR =
 	CLOCK_RADIUS - INNER_NUMBER_RADIUS + NUMBER_RADIUS_HOUR_24_INNER / 2
 export function getOuterNumberPosition(mode: MODE): number {

@@ -14,7 +14,7 @@ const timepicker = css`
 	);
 	border-radius: 3px;
 	display: inline-block;
-	width: 260px;
+	width: 100%;
 	position: relative;
 	user-select: none;
 `

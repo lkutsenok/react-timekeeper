@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import { useTransition } from 'react-spring'
-import { jsx } from '@emotion/core'
 
 import ClockHand from './ClockHand'
 import { HourNumbers, MinuteNumbers } from './Numbers'
@@ -35,7 +34,7 @@ type Transition = {
 	props: any
 }
 
-export default function ClockWrapper({ clockEl }: Props) {
+export default function ClockWrapper({ clockEl ,}: Props) {
 	const firstTime = useRef(true)
 	const { hour24Mode } = useConfig()
 	const { mode, time } = useTimekeeperState()
@@ -72,10 +71,12 @@ export default function ClockWrapper({ clockEl }: Props) {
 					return null
 				}
 				return isMinuteMode(currentMode) ? (
-					<MinuteNumbers anim={anim} key={key} />
+					<MinuteNumbers activeMinute={time.minute} anim={anim} key={key} />
 				) : (
 					<HourNumbers
 						anim={anim}
+						activeHour={time.hour}
+						activeMinute={time.minute}
 						key={key}
 						mode={currentMode as MODE.HOURS_12 | MODE.HOURS_24}
 						hour24Mode={hour24Mode}

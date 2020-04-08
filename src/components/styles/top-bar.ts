@@ -1,7 +1,7 @@
 import { css, jsx, keyframes } from '@emotion/core'
 
-const TIME_DEFAULT_COLOR = '#8C8C8C'
-const TIME_SELECTED_COLOR = '#8EDDFD'
+const TIME_DEFAULT_COLOR = '#9a9ca1'
+const TIME_SELECTED_COLOR = '#007aff'
 
 export const wrapper = (is24hr: boolean) => css`
 	background: var(--top-bg, white);
@@ -17,7 +17,6 @@ export const wrapper = (is24hr: boolean) => css`
 `
 
 export const hourWrapper = (is24hr: boolean) => css`
-	width: 72px;
 	text-align: right;
 	position: relative;
 	display: inline-block;
@@ -27,14 +26,13 @@ export const hourWrapper = (is24hr: boolean) => css`
 export const minuteWrapper = (is24hr: boolean) => css`
 	position: relative;
 	display: inline-block;
-	${is24hr && 'width: 72px;'}
 `
 
 export const colon = css`
 	color: var(--top-colon-color, ${TIME_DEFAULT_COLOR});
 	font-weight: 500;
 	display: inline-block;
-	font-size: 46px;
+	font-size: 200px;
 	vertical-align: 2px;
 	margin: 0 5px;
 	line-height: normal;
@@ -55,7 +53,7 @@ const timeSelected = css`
 export const time = (isActive: boolean) => css`
 	color: var(--top-text-color, ${TIME_DEFAULT_COLOR});
 	display: inline-block;
-	font-size: 48px;
+	font-size: 200px;
 	cursor: pointer;
 	user-select: none;
 	line-height: normal;

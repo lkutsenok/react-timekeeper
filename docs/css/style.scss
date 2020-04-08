@@ -34,7 +34,7 @@ $max-width: 800px;
 	margin-bottom: 24px;
 }
 
-// pre 
+// pre
 
 pre code {
 	overflow-x: auto !important;
@@ -160,7 +160,7 @@ pre code {
 }
 
 .docs-section {
-	max-width: $max-width;
+	//max-width: $max-width;
 	margin: 0 auto;
 	padding: 40px 0;
 	@include mq(max, $max-width + 40px){
@@ -184,7 +184,7 @@ pre code {
 .h3-api {
 	font-weight: 400;
 	font-family: $font-main;
-	// color: 
+	// color:
 	.name {
 		background: rgba($blue1, 0.5);
 		border-radius: 2px;
@@ -222,7 +222,7 @@ pre code {
 		padding: 20px 0;
 		&-timekeeper-wrapper {
 			margin: 0 auto;
-			width: 260px;
+			//width: 260px;
 		}
 		&-time {
 			display: block;
@@ -234,7 +234,7 @@ pre code {
 		padding: 20px 0;
 		&-timekeeper-wrapper {
 			margin: 0 auto;
-			width: 260px;
+			//width: 260px;
 		}
 		&-time {
 			display: block;
@@ -253,7 +253,7 @@ pre code {
 		padding: 20px 0;
 		&-timekeeper-wrapper {
 			margin: 0 auto;
-			width: 260px;
+			//width: 260px;
 		}
 	}
 }

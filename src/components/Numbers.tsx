@@ -12,18 +12,20 @@ interface MinuteProps {
 		translate: any
 		translateInner: any
 	}
+	activeMinute: Number
 }
 
 interface HourProps extends MinuteProps {
 	mode: MODE.HOURS_12 | MODE.HOURS_24
 	hour24Mode: boolean
+	activeHour: Number
 }
 
 /*
 	can memoize components since `anim` object doesn't actually change
 */
 
-function hours({ anim, mode, hour24Mode }: HourProps) {
+function hours({ anim, mode, hour24Mode, activeHour }: HourProps) {
 	const { opacity, translate: translateOuter, translateInner } = anim
 	const { numbers: numbersOuter, numbersInner } = CLOCK_VALUES[mode]
 
@@ -36,7 +38,7 @@ function hours({ anim, mode, hour24Mode }: HourProps) {
 			{numbersOuter.map((val, i) => {
 				return (
 					<animated.span
-						css={numbersStyle({ hour24Mode })}
+						css={numbersStyle({ hour24Mode, active: parseInt(val) === activeHour })}
 						key={val}
 						style={{
 							transform: translateOuter.interpolate((v) => transform(i + 1, v)),
@@ -51,7 +53,7 @@ function hours({ anim, mode, hour24Mode }: HourProps) {
 				numbersInner!.map((val, i) => {
 					return (
 						<animated.span
-							css={numbersStyle({ hour24Mode, inner: true })}
+							css={numbersStyle({ hour24Mode, inner: true, active: parseInt(val) === activeHour })}
 							key={val}
 							style={{
 								transform: translateInner.interpolate((v) => transform(i + 1, v)),
@@ -65,11 +67,9 @@ function hours({ anim, mode, hour24Mode }: HourProps) {
 	)
 }
 
-export const HourNumbers = memo(hours, (prev, next) => {
-	return prev.mode === next.mode && prev.hour24Mode === next.hour24Mode
-})
+export const HourNumbers = hours
 
-function minutes({ anim }: MinuteProps) {
+function minutes({ anim,activeMinute }: MinuteProps) {
 	const { opacity, translate } = anim
 	return (
 		<animated.div
@@ -80,7 +80,7 @@ function minutes({ anim }: MinuteProps) {
 			{MINUTES.map((val, i) => {
 				return (
 					<animated.span
-						css={numbersStyle({})}
+						css={numbersStyle({active: parseInt(val) === activeMinute})}
 						key={val}
 						style={{
 							transform: translate.interpolate((v) => transform(i + 1, v)),
@@ -94,6 +94,4 @@ function minutes({ anim }: MinuteProps) {
 	)
 }
 
-export const MinuteNumbers = memo(minutes, () => {
-	return true
-})
+export const MinuteNumbers = minutes

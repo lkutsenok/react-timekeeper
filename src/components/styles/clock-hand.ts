@@ -1,8 +1,8 @@
 import { css, jsx } from '@emotion/core'
 
-const CLOCK_HAND_ARM = '#bceaff'
-const CLOCK_HAND_CIRCLE_BACKGROUND = '#e6f7ff'
-const CLOCK_HAND_INTERMEDIATE_CIRCLE_BACKGROUND = '#ade2fb'
+const CLOCK_HAND_ARM = '#007aff'
+const CLOCK_HAND_CIRCLE_BACKGROUND = '#007aff'
+const CLOCK_HAND_INTERMEDIATE_CIRCLE_BACKGROUND = '#fff'
 
 export const line = css`
 	stroke: var(--hand-line-color, ${CLOCK_HAND_ARM});

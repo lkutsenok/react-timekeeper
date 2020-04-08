@@ -6,7 +6,7 @@ import {
 	HOUR_24_OUTER_FONT_SIZE,
 } from '../../helpers/constants'
 
-const CLOCK_NUMBER_COLOR = '#999999'
+const CLOCK_NUMBER_COLOR = '#9a9ca1'
 
 function getFontSize(hour24Mode: boolean, inner: boolean): string {
 	if (!hour24Mode) {
@@ -20,12 +20,13 @@ function getFontSize(hour24Mode: boolean, inner: boolean): string {
 interface Props {
 	hour24Mode?: boolean
 	inner?: boolean
+	active?: boolean
 }
 
-export const numbersStyle = ({ hour24Mode = false, inner = false }: Props) => css`
+export const numbersStyle = ({ hour24Mode = false, inner = false, active = false }: Props) => css`
 	display: inline-block;
 	position: absolute;
-	color: var(--numbers-text-color, ${CLOCK_NUMBER_COLOR});
+	color: var(--numbers-text-color, ${active ? "#fff" : CLOCK_NUMBER_COLOR});
 	pointer-events: none;
 	border-radius: 99px;
 	width: ${NUMBER_RADIUS_REGULAR}px;
