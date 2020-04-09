@@ -4,7 +4,6 @@ const TIME_DEFAULT_COLOR = '#9a9ca1'
 const TIME_SELECTED_COLOR = '#007aff'
 
 export const wrapper = (is24hr: boolean) => css`
-	background: var(--top-bg, white);
 	padding: 14px 16px;
 	border-radius: 3px 3px 0 0;
 	position: relative;
