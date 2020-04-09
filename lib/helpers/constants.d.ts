@@ -25,7 +25,7 @@ export declare const NUMBER_REGULAR_FONT_SIZE = 58;
 export declare const HOUR_24_INNER_FONT_SIZE = 40;
 export declare const HOUR_24_OUTER_FONT_SIZE = 58;
 export declare const NUMBER_RADIUS_REGULAR = 100;
-export declare const NUMBER_OUTER_POSITION = 50;
+export declare const NUMBER_OUTER_POSITION = 70;
 export declare function getOuterNumberPosition(mode: MODE): number;
 export declare const INITIAL_HOUR_TRANSFORM: number;
 export declare const INITIAL_MINUTE_TRANSFORM: number;

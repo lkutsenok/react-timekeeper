@@ -71,8 +71,8 @@ const NUMBER_RADIUS_HOUR_24_OUTER = 100
 const NUMBER_RADIUS_HOUR_24_INNER = 100
 
 // positioning of numbers
-export const NUMBER_OUTER_POSITION = 50
-const NUMBER_OUTER_POSITION_24_HOUR = 55 // controls how far out to move numbers during 24h mode
+export const NUMBER_OUTER_POSITION = 70
+const NUMBER_OUTER_POSITION_24_HOUR = 70 // controls how far out to move numbers during 24h mode
 const NUMBER_INNER_POSITION_24_HOUR =
 	CLOCK_RADIUS - INNER_NUMBER_RADIUS + NUMBER_RADIUS_HOUR_24_INNER / 2
 export function getOuterNumberPosition(mode: MODE): number {
